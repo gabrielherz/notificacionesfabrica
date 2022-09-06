@@ -18,7 +18,10 @@
 
 ## notificacionesfabrica
 
-Proyecto UI5 de Notificaciones de Fábrica Derex
+Proyecto UI5 de Notificaciones de Fábrica Derex.
+
+## Descripción
+Se ha desarrollado una App para ejecutarse en IPADs dentro de la factoría de la empresa Derex, con el propósito que los Operarios puedan loguearse en las distintas máquinas, dependiendo de las órdenes de producción que se encuentren en el módulo de Planificación y Fabricación de SAP (Transacción PRODPLAN). Una vez logueados los mismos pueden registrar las cantidades de los materiales/componentes empleados, así como los elementos faltantes.
 
 ## Contribución
 Abierto a cualquier tipo de contribución y sugerencias. Proyecto de ejmplo para el CV.
@@ -37,7 +40,36 @@ notificacionesfabrica is distributed in the hope that it will be useful, but WIT
 You should have received a copy of the GNU General Public License along with Foobar. If not, see <https://www.gnu.org/licenses/>.
 
 ## Estado del Proyecto
-Sin finalizarpor requerimiento explísito de la empresa al culminarse mi vida laboral en la misma.
+Sin finalizar por requerimiento explísito de la empresa al culminarse mi vida laboral en la misma.
+
+## Uso
+ Al iniciar la App, aparece la pantalla de Loguin en la orden de transporte perteneciente al/los operarios a ingresar en máquina
+ ![Imagen loginOrdenes.view.xml](https://github.com/gabrielherz/images/blob/derex/blob/pantalla%201%20notif%20f%C3%A1brica.png)
+ 
+ Se selecciona la orden apareciendo así la siguiente pantalla con los operarios a loguear en la misma
+ ![Imagen login.view.xml](https://github.com/gabrielherz/images/blob/derex/blob/pantalla%202%20notif%20f%C3%A1brica.png)
+
+Se seleccionan los operarios
+![Imagen login.view.xml](https://github.com/gabrielherz/images/blob/derex/blob/pantalla%203%20notif%20f%C3%A1brica.png)
+
+Aparece el listado con los componentes listados de la/los orden/operarios previamente seleccionada/os (Aufnr/Pernr). 
+En la parte superior derecha de la pantalla aparece la orden.
+Sobre la tabla aparece la cabecera con los detalles básicos del material a fabricar.
+![Imagen fabricacion.view.xml](https://github.com/gabrielherz/images/blob/derex/blob/pantalla%204%20notif%20f%C3%A1brica.png)
+
+Para la preparación, se selecciona del menú lateral los "Controles de Proceso"
+![Imagen fabricacion.view.xml](https://github.com/gabrielherz/images/blob/derex/blob/pantalla%205%20notif%20f%C3%A1brica.png)
+
+En "Controles de Proceso" se puede navegar entre las distintas tablas correspondientes al proceso de fabricación
+![contrProceso.view.xml](https://github.com/gabrielherz/images/blob/derex/blob/pantalla%206%20notif%20f%C3%A1brica.png)
+
+Para que se carguen los IDs de los empleados en las tablas y se puedan modificar los valores relacionados con sus Pernrs, se seleccionan del menú desplegable donde aparece la orden (parte superior derecha de la pantalla)
+![contrProceso.view.xml](https://github.com/gabrielherz/images/blob/derex/blob/pantalla%207%20notif%20f%C3%A1brica.png)
+
+Para elegir el tipo de unidad, se pulsa el matchcode del input correspondiente y aparece el listado de la ayuda
+![contrProceso.view.xml](https://github.com/gabrielherz/images/blob/derex/blob/pantalla%209%20notif%20f%C3%A1brica.png)
+
+
 
 ### Starting the generated app
 
