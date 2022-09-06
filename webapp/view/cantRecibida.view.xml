@@ -1,0 +1,197 @@
+	<mvc:View
+	height="100%"
+	controllerName="notificacionesfabrica.controller.cantRecibida"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+		xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+    
+    <Page  id="idPageCantRecibida"
+			showHeader="false"
+			enableScrolling="true"
+			class="sapUiContentPadding"
+			showNavButton="false">
+		<landmarkInfo>
+			<PageAccessibleLandmarkInfo
+				rootRole="Region"
+				rootLabel="{i18n>tareas_produccion_rootLabel}"
+				contentRole="Main"
+				contentLabel="{i18n>tareas_produccion_rootLabel}"/>
+		</landmarkInfo>
+		
+		<content>
+    <!-- ************ CABECERA ************-->
+            <l:VerticalLayout width="100%">
+                <OverflowToolbar >
+                    <Toolbar id="toolbar_cabecera1">
+                    </Toolbar>
+                </OverflowToolbar>
+                <OverflowToolbar >
+                    <Toolbar id="toolbar_cabecera2">
+                    </Toolbar>
+                </OverflowToolbar>
+                <OverflowToolbar >
+                    <Toolbar id="toolbar_cabecera3">
+                    </Toolbar>
+                </OverflowToolbar>
+            </l:VerticalLayout>
+	<!-- ************ CABECERA ************-->	
+
+		<IconTabBar
+			id="idTabBarCantRecibida"
+			expanded="{device>/isNoPhone}"
+			class="sapUiResponsiveContentPadding">
+			<items>
+				<IconTabFilter text="{i18n>tabBarCantRecibidaComponentes}" key="contrProd">
+					<content>
+						<Table id="idContrProdTabla" growing="true" growingThreshold="10" paste="onPaste">
+							<headerToolbar>
+								<OverflowToolbar id="otbSubheader">
+									<Title text="{i18n>componentes_tabla_titulo}" level="H2" />
+									<ToolbarSpacer />		
+								</OverflowToolbar>
+							</headerToolbar>
+							<columns>					
+								<Column width="12em">
+									<Text text="{i18n>componentes_tab_col_1}" />
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+									<Text text="{i18n>componentes_tab_col_2}" />
+								</Column>									
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+									<Text text="{i18n>componentes_tab_col_3}" />
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+									<Text text="{i18n>componentes_tab_col_4}" />
+								</Column>						
+							</columns>
+                            <Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+									<Text text="{i18n>componentes_tab_col_5}" />
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+									<Text text="{i18n>componentes_tab_col_6}" />
+								</Column>						
+							<items>
+								<ColumnListItem vAlign="Middle">
+									<cells>							
+										<ObjectIdentifier title="{Matnr}"  />								
+										<ObjectIdentifier title="{Matxt}"  />	
+                                        <ObjectIdentifier title="{Charg}"  />	
+                                        <ObjectIdentifier number="{Bdmng}" unit="{Meins}" />												 
+                                                                    
+                                        <Input enabled="true" type = "sap.ui.model.type.Unit"  value="{Brgew}"  description="{Meins}" />
+
+                                        
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>			
+
+				</IconTabFilter>
+				<IconTabFilter text="{i18n>tabBarContrProcesoContrProcPrev}" key="ContrProcPrev">
+					<content>
+						<Table id="idContrProcPrevTabla" growing="true" growingThreshold="10" paste="onPaste">
+							<headerToolbar>
+								<OverflowToolbar id="otbSubheader2">
+									<Title text="{i18n>ContrProcPrev_tabla_titulo}" level="H2" />
+									<ToolbarSpacer />		
+								</OverflowToolbar>
+							</headerToolbar>
+							<columns>					
+								<Column width="12em">
+									<Text text="{i18n>ContrProcPrev_tab_col_1}" />
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+									<Text text="{i18n>ContrProcPrev_tab_col_2}" />
+								</Column>									
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+									<Text text="{i18n>ContrProcPrev_tab_col_3}" />
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+									<Text text="{i18n>ContrProcPrev_tab_col_4}" />
+								</Column>						
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+									<Text text="{i18n>ContrProcPrev_tab_col_5}" />
+								</Column>						
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+									<Text text="{i18n>ContrProcPrev_tab_col_6}" />
+								</Column>						
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle">
+									<cells>							
+										<ObjectIdentifier title="{Prcqm}"  />								
+										<ObjectIdentifier title="{Pernr}"  />								
+										<ObjectIdentifier title="	path: {Datum} 
+																	type: 'sap.ui.model.type.Date'
+																	"/>
+										<ObjectIdentifier title="{Uzeit}"  />								
+										<ObjectIdentifier title="	path: {Uzeit} 
+																	type: 'sap.ui.model.type.DateTime'
+																	" />																												
+										<CheckBox selected="{Vluok}" />
+										<CheckBox selected="{Vlnok}" />										
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>			
+
+				</IconTabFilter>
+				<IconTabFilter text="{i18n>tabBarContrProcesoVerfTaraEnv}" key="VerfTaraEnv">
+										<content>
+						<Table id="idVerifTaraEnvTabla" growing="true" growingThreshold="10" paste="onPaste">
+							<headerToolbar>
+								<OverflowToolbar id="otbSubheader3">
+									<Title text="{i18n>VerifTaraEnv_tabla_titulo}" level="H2" />
+									<ToolbarSpacer />		
+								</OverflowToolbar>
+							</headerToolbar>
+							<columns>					
+								<Column width="12em">
+									<Text text="{i18n>VerifTaraEnv_tab_col_1}" />
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+									<Text text="{i18n>VerifTaraEnv_tab_col_2}" />
+								</Column>									
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+									<Text text="{i18n>VerifTaraEnv_tab_col_3}" />
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+									<Text text="{i18n>VerifTaraEnv_tab_col_4}" />
+								</Column>														
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle">
+									<cells>							
+										<!--<ObjectIdentifier title="{Posnr}"  />		-->
+										<Input enabled="true" type = "sap.ui.model.type.String"  value="{Posnr}" />												
+										<!--<ObjectIdentifier title="{Trwgt}"  />-->								
+										<Input enabled="true" type = "sap.ui.model.type.Unit"  value="{Trwgt}" />												
+										<Input enabled="true" type = "sap.ui.model.type.String"  value="{Meins}" />												
+										<Input enabled="true" type = "sap.ui.model.type.String"  value="{Pernr}" />												
+																				
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>	
+
+				</IconTabFilter>			
+			</items>
+		</IconTabBar>
+		<!--<footer>
+			<OverflowToolbar id="otbFooter">
+				<ToolbarSpacer />
+				<Button text="{i18n>btnEnviar}" press="onSumbit">
+					<layoutData>
+						<OverflowToolbarLayoutData
+							moveToOverflow="false" />
+					</layoutData>
+				</Button>
+			</OverflowToolbar>
+		</footer>-->
+	</content>
+	</Page>
+</mvc:View>

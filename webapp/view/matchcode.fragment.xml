@@ -1,0 +1,11 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <SelectDialog id="matchcodesList" noDataText="{i18n>matchcodeNoData}"  title="{i18n>tituloMatchcode}" 
+        liveChange="handleTableValueHelpSearch"
+        confirm="handleTableValueHelpConfirm" 
+        cancel="handleTableValueHelpCancel" 
+        growingThreshold='10' contentWidth="50px" contentHeight="250px">
+        <StandardListItem/>
+    </SelectDialog>    
+</core:FragmentDefinition>

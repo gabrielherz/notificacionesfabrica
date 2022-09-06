@@ -1,0 +1,59 @@
+{
+	"selectedKey": "",
+
+	"navigation": [
+		{
+			"titleI18nKey": "sideContentlogin",
+			"icon": "sap-icon://visits",
+			"expanded": true,
+			"key": "loginOrdenes",
+			"items": []
+		},
+		{
+			"titleI18nKey": "sideContentListFabricacion",
+			"icon": "sap-icon://factory",
+			"expanded": false,
+			"key": "fabricacion",
+			"items": []
+		},
+		{
+			"titleI18nKey": "sideContentEmpleados",
+			"icon": "sap-icon://employee-lookup",
+			"expanded": true,
+			"key": "empleados",
+			"items": []
+		},
+        {
+			"titleI18nKey": "sideContentTareas",
+			"icon": "sap-icon://activity-2",
+			"expanded": false,
+			"key": "tareas",
+			"items": []
+		},
+		{
+			"titleI18nKey": "sideContentPreparacion",
+			"icon": "sap-icon://lab",
+			"expanded": false,
+			"key": "preparacion",
+			"items": [
+				{
+					"titleI18nKey": "sideContentPreparacionContrProceso",
+					"key": "contrProceso"
+					
+				},
+				{
+					"titleI18nKey": "sideContentPreparacionCantRecibida",
+					"key": "cantRecibida"
+					
+				}
+			]
+		}
+	],
+	"fixedNavigation": [
+		{			
+			"titleI18nKey": "sideContentLogout",
+			"icon": "sap-icon://log",
+			"key": "loginOrdenes"
+		}		
+	]
+}

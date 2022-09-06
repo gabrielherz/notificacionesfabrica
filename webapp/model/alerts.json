@@ -1,0 +1,28 @@
+{
+	"alerts":
+		{
+			"notifications": [
+				{
+					"title": "Pocas horas imputadas",
+					"description": "Tienes pocas horas imputadas, contactar con RRHH",
+					"date": "1 hour ago",
+					"priority": "High",
+					"icon": "sap-icon://sys-cancel-2"
+				},				
+				{
+					"title": "Máquina 1232 pendiente de mantenimiento",
+					"description": "La máquina 1232 requiere de cambio de aceite",
+					"date": "2 day ago",
+					"priority": "Low",
+					"icon": "sap-icon://sys-cancel-2"
+				}
+			],
+			"errors":  [
+			
+				]
+
+			
+			
+		}
+
+}

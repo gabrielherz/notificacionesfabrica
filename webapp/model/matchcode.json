@@ -1,0 +1,11 @@
+{
+    "matchcodes":[
+        {
+            "id": "idpeso",
+            "entitySet": "MeinsSet",
+            "properties": ["Msehi", "Msehl"],
+            "toFilter": ["Msehi"]
+        }
+
+    ]
+}

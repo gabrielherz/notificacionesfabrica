@@ -1,0 +1,41 @@
+<mvc:View
+	controllerName="notificacionesfabrica.controller.cabecera"
+	xmlns="sap.m"
+		xmlns:l="sap.ui.layout" 
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:smartForm="sap.ui.comp.smartform" 
+	xmlns:smartField="sap.ui.comp.smartfield"  >
+<!--<core:FragmentDefinition    
+    xmlns:mvc="sap.ui.core.mvc"
+	controllerName="notificacionesfabrica.controller.cabecera"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
+	xmlns="sap.m">-->
+    	<l:VerticalLayout width="100%">
+			<OverflowToolbar id="toolbar1">
+				<!--<Label id="ordenLbl" text="{i18n>orden}:" />-->
+				<Label id="ordenLbl"  />
+				<ToolbarSpacer/>				
+				<Label id="fecha_iniLbl" text="{i18n>fecha_ini}:" />
+				<Label id="fecha_libLbl" text="{i18n>fecha_lib}:" />
+			</OverflowToolbar>
+			
+			<OverflowToolbar id="toolbar2">				
+				<Label id="marcaLbl" text="{i18n>marca}:" />
+				<Label id="num_loteLbl" text="{i18n>num_lote}:" />
+				<Label id="a_pesarLbl" text="{i18n>a_pesar}:" />
+				<Label id="unidades_cajaLbl" text="{i18n>unidades_caja}:" />
+			</OverflowToolbar>				
+			<OverflowToolbar id="toolbar3">				
+				<Label id="densidadLbl" text="{i18n>densidad}:" />
+				<Label id="volumenLbl" text="{i18n>volumen}:" />
+				<Label id="cant_nominalLbl" text="{i18n>cant_nominal}:" />
+				<Label id="fecha_caducidadLbl" text="{i18n>fecha_caducidad}:" />
+				<Label id="impr_caducidadLbl" text="{i18n>impr_caducidad}:" />
+			</OverflowToolbar>
+		</l:VerticalLayout>
+</mvc:View>
+<!--</core:FragmentDefinition>    -->

@@ -1,0 +1,129 @@
+	<mvc:View
+	height="100%"
+	controllerName="notificacionesfabrica.controller.fabricacion"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+		xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+    
+    <Page  id="idPageLogin"
+			showHeader="false"
+			enableScrolling="true"
+			class="sapUiContentPadding"
+			showNavButton="false">
+		<landmarkInfo>
+			<PageAccessibleLandmarkInfo
+				rootRole="Region"
+				rootLabel="{i18n>fabricacion_rootLabel}"
+				contentRole="Main"
+				contentLabel="{i18n>fabricacion_rootLabel}"/>
+		</landmarkInfo>
+		<!--<Shell id="cabecera" >
+			<App id="appContainer" backgroundOpacity="0"></App>			
+		</Shell>-->
+		 <!--<core:Fragment id="cabecera" fragmentName="notificacionesfabrica.view.cabecera" type="XML"/>		 
+		<content>-->
+		<content>
+		<!-- ************ CABECERA ************-->
+		<l:VerticalLayout width="100%">
+			<OverflowToolbar >
+				<Toolbar id="toolbar_cabecera1">
+				</Toolbar>
+			</OverflowToolbar>
+			<OverflowToolbar >
+				<Toolbar id="toolbar_cabecera2">
+				</Toolbar>
+			</OverflowToolbar>
+			<OverflowToolbar >
+				<Toolbar id="toolbar_cabecera3">
+				</Toolbar>
+			</OverflowToolbar>
+		</l:VerticalLayout>
+	<!-- ************ CABECERA ************-->
+		
+			<Table id="idFabricacionTabla" growing="true" growingThreshold="10" paste="onPaste">
+				<headerToolbar>
+					<OverflowToolbar id="otbSubheader">
+						<Title text="{i18n>fabricacion_tabla_titulo}" level="H2" />
+						<ToolbarSpacer />
+						<!--<Button id="editButton" text="{i18n>btnEdit}" type="Transparent"
+							press="onEdit" />
+						<Button id="saveButton" text="{i18n>btnSave}" type="Transparent"
+							press="onSave" visible="false" />
+						<Button id="cancelButton" text="{i18n>btnCancel}" type="Transparent"
+							press="onCancel" visible="false" />-->
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="12em">
+						<Text text="{i18n>fabricacion_tab_col_1}" />
+					</Column>
+					<!--<Column minScreenWidth="Tablet" demandPopin="true" hAlign="center">
+						<Text text="{i18n>fabricacion_tab_col_2}" />
+					</Column>-->
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+						<Text text="{i18n>fabricacion_tab_col_3}" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+						<Text text="{i18n>fabricacion_tab_col_4}" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+						<Text text="{i18n>fabricacion_tab_col_5}" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+						<Text text="{i18n>fabricacion_tab_col_6}" />
+					</Column>
+					<!--<Column hAlign="End">
+						<Text text="{i18n>fabricacion_tab_col_7}" />
+					</Column>		-->			
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<ObjectIdentifier title="{Matnr}" text="{Maktx}" />
+							<ObjectIdentifier title="{ChargD}"  />
+							<ObjectNumber number="{Bdmng}" unit="{Meins}"
+								/>
+							<!--<ObjectNumber number="{Enmng}" unit="{Meins}"
+								/>-->
+								<Input enabled="true" type = "sap.ui.model.type.Unit"  value="{Enmng}"  description="{Meins}" />
+								
+						<!--description = "{Meins} / {i18n>fabricacion_tab_col_5}" />-->
+
+							<ObjectNumber number="{Erfmg}" unit="{Meins}"
+								 />
+							
+
+							<!--<ObjectNumber number="{Enmng}" unit="{Meins}"
+								state="{
+										 parts: [
+												{Enmng},
+												{Bdmng}
+											],
+										formatter: 'projectpruebaodata.controller.formatter.cantidadAFabricar'
+							}" />
+							<ObjectNumber number="{Erfmg}" unit="{Meins}"
+								state="{
+										path: 'WeightMeasure',
+										formatter: 'projectpruebaodata.controller.formatter.cantidadAFabricar'
+							}" />-->
+							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<footer>
+			<OverflowToolbar id="otbFooter">
+				<ToolbarSpacer />
+				<Button text="{i18n>btnEnviar}" press="onSumbit">
+					<layoutData>
+						<OverflowToolbarLayoutData
+							moveToOverflow="false" />
+					</layoutData>
+				</Button>
+			</OverflowToolbar>
+		</footer>
+
+	</Page>
+</mvc:View>

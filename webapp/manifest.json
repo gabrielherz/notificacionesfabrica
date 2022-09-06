@@ -1,0 +1,249 @@
+{
+  "_version": "1.40.0",
+  "sap.app": {
+    "id": "notificacionesfabrica",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap-ux/fiori-freestyle-writer:basic",
+      "version": "0.11.15",
+      "toolsId": "acdc709f-274c-4826-88e8-ff7498e6dfb0"
+    },
+    "dataSources": {
+      "matchcodes": {
+        "uri": "/sap/opu/odata/sap/ZFPP_MATCHCODES_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "operarios":{        
+        "uri": "/sap/opu/odata/sap/ZGPP_OBTENER_OPERARIOS_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "login": {
+        "uri": "/sap/opu/odata/sap/ZFPP_NOTIFI_LOG_IN_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "logout": {
+        "uri": "/sap/opu/odata/sap/ZFPP_NOTIFI_LOG_OUT_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "loginHistorico": {
+        "uri": "/sap/opu/odata/sap/ZUI5_NF_LOGIN_OPERARIO_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "fabricacion": {
+        "uri": "/sap/opu/odata/sap/ZUI5_NF_ORDEN_FABRICACION_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "datosOrden": {
+        "uri": "/sap/opu/odata/sap/ZGPP_OBTENER_DATOS_ORDEN_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "contrProceso": {
+        "uri": "/sap/opu/odata/sap/ZGPP_CONTROLES_PROCESO_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }                  
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.102.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleUrl": "i18n/i18n.properties",
+					"async": true,
+          "bundleName": "notificacionesfabrica.i18n.i18n"
+        }
+      },
+      "side": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/sideContent.json"
+			},
+			"alerts": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/alerts.json"
+			},
+      "matchcodes": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "model/matchcode.json"
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "notificacionesfabrica.view",
+        "controlAggregation": "pages",
+        "controlId": "mainContents"
+      },
+      "routes": [
+        {
+          "name": "loginOrdenes",
+          "pattern": "loginOrdenes",
+          "target": [
+            "loginOrdenes"
+          ]
+        },{
+          "name": "login",
+          "pattern": "login",
+          "target": [
+            "login"
+          ]
+        },
+        {
+          "name": "fabricacion",
+          "pattern": "fabricacion",
+          "target": [
+            "fabricacion"
+          ]
+        },
+        {
+          "name": "contrProceso",
+          "pattern": "contrProceso",
+          "target": [
+            "contrProceso"
+          ]
+        }
+
+      ],
+      "targets": {
+        "loginOrdenes": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "loginOrdenes",
+          "viewName": "loginOrdenes"
+        },
+        "login": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "login",
+          "viewName": "login"
+        },
+        "fabricacion": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "fabricacion",
+          "viewName": "fabricacion"
+        },
+        "cabecera": {          
+          "viewType": "XML",
+          "viewName": "cabecera",
+          "controlAggregation": "pages",
+          "controlId": "appContainer",
+          "viewId": "cabecera",
+          "parents": [ "fabricacion" ]
+        },
+        "contrProceso": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "contrProceso",
+          "viewName": "contrProceso"
+        }
+                
+      }
+    },
+    "rootView": {
+      "viewName": "notificacionesfabrica.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    }
+  }
+}
+

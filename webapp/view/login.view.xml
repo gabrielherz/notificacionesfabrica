@@ -1,0 +1,76 @@
+<mvc:View
+	controllerName="notificacionesfabrica.controller.login"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+	xmlns:mvc="sap.ui.core.mvc" >
+
+	<Page  id="idPageLogin"
+			showHeader="false">
+		<landmarkInfo>
+			<PageAccessibleLandmarkInfo
+				rootRole="Region"
+				rootLabel="{i18n>Login_rootLabel}"
+				contentRole="Main"
+				contentLabel="{i18n>Login_rootLabel}"/>
+		</landmarkInfo>
+	<content>
+	<!--<mvc:View viewName="notificacionesfabrica.view.cabecera" controllerName="notificacionesfabrica.controller.cabecera"/>-->
+	<!--<core:Fragment id="cabecera" fragmentName="notificacionesfabrica.view.cabecera" type="XML"/>-->
+	<l:VerticalLayout width="100%">
+		<OverflowToolbar >
+			<Toolbar id="toolbar_cabecera1">
+			</Toolbar>
+		</OverflowToolbar>
+		<OverflowToolbar >
+			<Toolbar id="toolbar_cabecera2">
+			</Toolbar>
+		</OverflowToolbar>
+		<OverflowToolbar >
+			<Toolbar id="toolbar_cabecera3">
+			</Toolbar>
+		</OverflowToolbar>
+	</l:VerticalLayout>
+		 
+		<List 	id="idListLogin" 
+				items="{/nombresOperariosSet}" 
+				noDataText="No Data Available"
+				growing="true" 
+				growingScrollToLoad="true"
+				mode="MultiSelect"
+				includeItemInSelection="true"
+				selectionChange="onSelectionChange">
+	<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="{i18n>usuarios_disponibles}" level="H2" />
+					<ToolbarSpacer />
+					
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<StandardListItem
+			title="{Pernr}"
+			description="{Nombre}"
+			icon="sap-icon://user-settings"
+			iconDensityAware="false"
+			iconInset="false" />
+
+				<!--<items>
+				<ObjectListItem title="{Pernr} : {Nombre}"  type="Active" icon="sap-icon://user-settings" press="onSelectionChange" />
+				</items>-->
+		</List>
+	
+  </content>
+  <footer>
+              <Toolbar>
+                  <ToolbarSpacer/>                  
+				  <Button  text="Login" type="Emphasized" press=".onLoginSubmit"></Button>
+              </Toolbar>
+          </footer>
+
+  	</Page>
+	
+</mvc:View>
